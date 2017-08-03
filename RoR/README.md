@@ -1,11 +1,7 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
+# Back end
+* Ruby & Rails version
+  Ruby 2.4.0p0 (2016-12-24 revision 57164)
+  Rails 5.0.5
 
 * System dependencies
 
@@ -21,4 +17,3 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...

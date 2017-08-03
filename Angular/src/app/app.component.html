@@ -1,0 +1,15 @@
+<div style="text-align:center">
+asdasd
+</div>
+<h1>
+  {{title}}
+</h1>
+
+<ul>
+  <li *ngFor="let book of books">{{ book.name }}</li>
+</ul>
+
+<h3>The users lisk:</h3>
+<ul>
+  <li *ngFor="let user of users">The name:{{ user.name }}, age:{{ user.age }}, admin? {{ user.admin }}</li>
+</ul>

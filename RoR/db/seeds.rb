@@ -11,3 +11,10 @@ Book.create!([
   { name: 'Harry Potter and your mom' },
   { name: '50 shadows of white' }
 ])
+
+
+User.create!([
+  { name: 'Sergiy', age: 24, admin: true },
+  { name: 'Ivanka', age: 21, admin: false },
+  { name: 'Yevgenuj', age: 28, admin: false }
+])

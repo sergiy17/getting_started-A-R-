@@ -1,4 +1,4 @@
-# HomeLibrary
+# My Pet project made with Angular 4 & Rails 5
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
