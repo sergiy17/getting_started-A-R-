@@ -5,11 +5,12 @@ asdasd
   {{title}}
 </h1>
 
-<ul>
-  <li *ngFor="let book of books">{{ book.name }}</li>
-</ul>
+<!-- <ul>
+  <li *ngFor="let article of articles">{{ article.name }}</li>
+</ul> -->
 
-<h3>The users lisk:</h3>
+<h3>The articles list:</h3>
 <ul>
-  <li *ngFor="let user of users">The name:{{ user.name }}, age:{{ user.age }}, admin? {{ user.admin }}</li>
+  <li *ngFor="let article of articles">Article name:{{ article.name }}, Made by:{{ article.user_id }} </li>
+  <!-- <li></li> -->
 </ul>

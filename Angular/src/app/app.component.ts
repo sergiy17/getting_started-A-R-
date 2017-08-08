@@ -8,18 +8,18 @@ import { Http } from '@angular/http';
 })
 export class AppComponent {
   title = 'from the angular => app works!';
-  books;
+  articles;
   users;
 
   constructor(private http: Http) {
-    this.getBook();
+    this.getArticles();
 
     this.getUsers();
   }
 
-  getBook(){
-    this.http.get('http://localhost:3000/books')
-    .subscribe(res => this.books = res.json());
+  getArticles(){
+    this.http.get('http://localhost:3000/articles')
+    .subscribe(res => this.articles = res.json());
   }
 
   getUsers(){
