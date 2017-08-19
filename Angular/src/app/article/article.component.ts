@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ArticleService } from '../services/article.service';
 import { OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
+import { ArticleService } from '../services/article.service';
 import { Article } from './article';
 
 @Component({

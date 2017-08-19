@@ -28,10 +28,19 @@ export class ArticleService{
       .then(res => this.articles = res.json());
   }
 
+  getArticle(id: number): Promise<Article> {
+    const url = this.baseUrl +'/${id}';
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json().data as Hero)
+      .catch(this.handleError);
+
+    // return this.getHeroes()
+    //   .then(heroes => heroes.find(hero => hero.id === id));
+  }
+
   create(name:string, user_id:number, content:string): Promise<Article>{
-
     const url = this.baseUrl + "/articles";
-
     return this.http
       .post(url, JSON.stringify({name:name, user_id:user_id, content:content}), {headers: this.headers})
       .toPromise()

@@ -1,0 +1,28 @@
+
+<div *ngIf="article">
+  <h2>Name: {{article.name}}</h2>
+  <div>
+    <label>id: </label>{{article.id}}
+  </div>
+  <div>
+    <label>user id: </label>{{article.user_id}}
+  </div>
+  <div>
+    <label>Content: </label>{{article.content}}
+  </div>
+
+<!--  -->
+
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>
+
+
+<!--
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="article.name" placeholder="name"/>
+  </div>
+ -->
+
+
