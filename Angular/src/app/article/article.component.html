@@ -1,0 +1,16 @@
+<h3>Articles page</h3>
+
+<div>
+  <label>Article name:</label><input #articleName>
+  <label>Created by the user:</label><input #userId>
+  <label>Content:</label><input #content>
+  <button (click)="create(articleName.value,userId.value,content.value);">Create new article</button>
+</div>
+
+<div class="grid grid-pad">
+  <a *ngFor="let article of articles" (click)="onSelect(article)" [class.selected]="article === selectedArticle" class="col-1-4">
+    <div class="module hero">
+      <h4>{{article.name}}</h4>
+    </div>
+  </a>
+</div>

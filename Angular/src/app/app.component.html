@@ -1,16 +1,11 @@
-<div style="text-align:center">
-asdasd
-</div>
+
 <h1>
   {{title}}
 </h1>
 
-<!-- <ul>
-  <li *ngFor="let article of articles">{{ article.name }}</li>
-</ul> -->
+<nav>
+  <a routerLink="/articles" routerLinkActive="active">Articles</a>
+  <a routerLink="/users" routerLinkActive="active">Users</a>
+</nav>
 
-<h3>The articles list:</h3>
-<ul>
-  <li *ngFor="let article of articles">Article name:{{ article.name }}, Made by:{{ article.user_id }} </li>
-  <!-- <li></li> -->
-</ul>
+<router-outlet></router-outlet>
