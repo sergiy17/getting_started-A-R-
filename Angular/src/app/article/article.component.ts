@@ -26,9 +26,15 @@ export class ArticleComponent implements OnInit{
     this.articleService.getArticles().then(articles => this.articles = articles);
   }
 
-  onSelect(article:Article):void{
+  // onSelect(article:Article):void{
+  //   this.selectedArticle = article;
+  // }
+
+  goToDetail(article:Article):void{
     this.selectedArticle = article;
+    this.router.navigate(['/articles', this.selectedArticle.id]);
   }
+
 
   create(name:string, user_id:number, content:string):void{
     this.articleService.create(name, user_id, content)

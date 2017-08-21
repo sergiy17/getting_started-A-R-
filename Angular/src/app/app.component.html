@@ -1,11 +1,12 @@
+<div class="container">
+  <h1>
+    {{title}}
+  </h1>
 
-<h1>
-  {{title}}
-</h1>
+  <nav>
+    <a routerLink="/articles" routerLinkActive="active">Articles list</a>
+    <a routerLink="/users" routerLinkActive="active">Users</a>
+  </nav>
 
-<nav>
-  <a routerLink="/articles" routerLinkActive="active">Articles</a>
-  <a routerLink="/users" routerLinkActive="active">Users</a>
-</nav>
-
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>

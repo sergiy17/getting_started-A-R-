@@ -25,18 +25,18 @@ export class ArticleService{
   getArticles(): Promise<Article[]>{
     return this.http.get(this.baseUrl + '/articles.json')
       .toPromise()
-      .then(res => this.articles = res.json());
+      .then(response => response.json());
   }
 
   getArticle(id: number): Promise<Article> {
-    const url = this.baseUrl +'/${id}';
+    const url = this.baseUrl +'/articles/' + id;
+    // const url = 'http://localhost:3000/articles/2';
+    console.log(url);
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as Hero)
+      .then(response => response.json())
       .catch(this.handleError);
 
-    // return this.getHeroes()
-    //   .then(heroes => heroes.find(hero => hero.id === id));
   }
 
   create(name:string, user_id:number, content:string): Promise<Article>{
