@@ -13,7 +13,7 @@ export class ArticleService{
 
   constructor(private http: Http) {}
 
-  private baseUrl = "http://localhost:3000";
+  private baseUrl = "http://localhost:3000/";
 
   private headers = new Headers({'Content-Type': 'application/json'});
 
@@ -23,13 +23,13 @@ export class ArticleService{
   }
 
   getArticles(): Promise<Article[]>{
-    return this.http.get(this.baseUrl + '/articles.json')
+    return this.http.get(this.baseUrl + 'articles.json')
       .toPromise()
       .then(response => response.json());
   }
 
   getArticle(id: number): Promise<Article> {
-    const url = this.baseUrl +'/articles/' + id;
+    const url = this.baseUrl +'articles/' + id;
     // const url = 'http://localhost:3000/articles/2';
     console.log(url);
     return this.http.get(url)
@@ -40,14 +40,33 @@ export class ArticleService{
   }
 
   create(name:string, user_id:number, content:string): Promise<Article>{
-    const url = this.baseUrl + "/articles";
+    const url = this.baseUrl + "articles";
     return this.http
       .post(url, JSON.stringify({name:name, user_id:user_id, content:content}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Article)
       .catch(this.handleError);
   }
+
+  delete(id:number): Promise<Article>{
+    const url = this.baseUrl + "articles/" + id;
+    return this.http.delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
+
+  update(article:Article): Promise<Article>{
+    const url = this.baseUrl + "articles/" + article.id;
+    return this.http
+      .put(url, JSON.stringify(article), {headers: this.headers})
+      .toPromise()
+      .then(() => article)
+      .catch(this.handleError)
+  }
 }
+
+
 
 
 // {name:"some name", user_id:3, content:"fuck off"}

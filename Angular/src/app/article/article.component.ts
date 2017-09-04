@@ -26,20 +26,24 @@ export class ArticleComponent implements OnInit{
     this.articleService.getArticles().then(articles => this.articles = articles);
   }
 
-  // onSelect(article:Article):void{
-  //   this.selectedArticle = article;
-  // }
-
   goToDetail(article:Article):void{
     this.selectedArticle = article;
     this.router.navigate(['/articles', this.selectedArticle.id]);
   }
-
 
   create(name:string, user_id:number, content:string):void{
     this.articleService.create(name, user_id, content)
       .then(() => {
         this.articles.push({name:name, user_id:user_id, content:content});
       });
+  }
+
+  delete(article:Article):void{
+    this.articleService.delete(article.id)
+    .then(() =>
+      {
+        this.articles = this.articles.filter(a => a !== article);
+        if(this.selectedArticle === article){this.selectedArticle = null;}
+      })
   }
 }

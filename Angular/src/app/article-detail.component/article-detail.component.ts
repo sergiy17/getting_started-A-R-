@@ -14,27 +14,15 @@ import { ArticleService } from '../services/article.service';
 })
 
 export class ArticleDetailComponent implements OnInit{
-  // @Input() article: Article;
+  @Input() article: Article;
 
-  article;
-  // res;
   constructor(
     private articleService :ArticleService,
     private route :ActivatedRoute,
     private location :Location
-    // private params: ParamMap
   ){}
 
   ngOnInit(): void{
-
-    // this.articleService.getArticle(14).then(article => this.article = article);
-
-
-
-
-
-// this.articleService.getArticles().then(articles => this.articles = articles);
-
     this.route.paramMap
       .switchMap((params: ParamMap) => this.articleService.getArticle(+params.get('id')))
       .subscribe(article => {console.log(article); this.article = article;})
@@ -42,6 +30,11 @@ export class ArticleDetailComponent implements OnInit{
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    this.articleService.update(this.article)
+      .then(() => this.goBack());
   }
 
   // save(): void {
