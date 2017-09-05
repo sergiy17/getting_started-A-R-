@@ -30,7 +30,6 @@ export class ArticleService{
 
   getArticle(id: number): Promise<Article> {
     const url = this.baseUrl +'articles/' + id;
-    // const url = 'http://localhost:3000/articles/2';
     console.log(url);
     return this.http.get(url)
       .toPromise()
@@ -65,8 +64,3 @@ export class ArticleService{
       .catch(this.handleError)
   }
 }
-
-
-
-
-// {name:"some name", user_id:3, content:"fuck off"}

@@ -40,10 +40,9 @@ export class ArticleComponent implements OnInit{
 
   delete(article:Article):void{
     this.articleService.delete(article.id)
-    .then(() =>
-      {
-        this.articles = this.articles.filter(a => a !== article);
-        if(this.selectedArticle === article){this.selectedArticle = null;}
-      })
+    .then(() => {
+      this.articles = this.articles.filter(a => a !== article);
+      if(this.selectedArticle === article){this.selectedArticle = null;}
+    })
   }
 }
